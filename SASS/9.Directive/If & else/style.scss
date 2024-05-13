@@ -1,0 +1,51 @@
+// Conditional Statement
+
+// $value:5;
+
+// p{
+//     @if 1+1==2{
+//         font-size: 20px;
+//     }
+//     @if 10>3{
+//         background: pink;
+//     }
+//     @if 20<12{
+//         background-color: green;
+//     }
+
+//     @if $value<6{
+//         color: blue;
+//     }
+// }
+// ---------------------------------------------------------
+
+// $value:8;
+// p{
+//     @if $value==1{
+//         color: blue;
+//     }@else if $value>5 and $value<10{
+//         color: teal;
+//     }@else{
+//         color: red;
+//     }
+// }
+
+// -------------------------------------------------------
+@mixin style($value){
+    width: $value+px;
+    height: $value+px;
+
+    @if $value >0 and $value<=20{
+        color: orange;
+    }@else if $value>20 and $value<=50{
+        color: teal;
+    }@else{
+        color: purple;
+    }
+}
+
+
+.selector{
+    // @include style(15);
+    @include style(25);
+}

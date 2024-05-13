@@ -1,0 +1,123 @@
+// Built-in-Function
+
+// .selector{
+//     padding: max(10px,50px,20px,60px,2px);
+//     padding: min(10px,50px,20px,60px,2px);
+//     padding: random();
+//     padding: random(10);
+//     padding: unit(10rem);
+//     padding: unitless(10rem);
+// }
+// ---------------------------------------------------------
+// String Function
+
+// .selector{
+//     font-family: quote(arial);
+//     font-family: unquote(arial);
+//     font-family: to-upper-case("Kirtigourab");
+//     font-family: to-lower-case("Kirtigourab");
+//     font-family: str-length("Kirtigourab");
+//     font-family: str-index("Kirtigourab","g");
+//     font-family: str-insert("Kirtigourab","D",6);
+//     font-family: unique-id();
+// }
+// --------------------------------------------------------------
+// Color Function
+
+// $initial-color:blue;
+// .container{
+//     width: 600px;
+//     height: 100px;
+//     background: darken($initial-color,20);
+//     background: lighten($initial-color,20);
+//     background: adjust-hue($initial-color,40);
+//     background: saturate($initial-color,80);
+//     background: mix($initial-color,yellow,60);
+//     background: mix($initial-color,yellow,60);
+// }
+// -------------------------------------------------------------------
+// List function
+
+// $list:20px 30px 10px;
+
+// .selector{
+//     padding: length($list);
+//     padding: nth($list,2);
+//     padding: set-nth($list,3,2em);
+//     padding: join((10px,20px,30px),(40px,50px,60px),comma);
+//     padding: join((10px,20px,30px),(40px,50px,60px),space);
+//     padding: append($list,60px);
+// }
+// --------------------------------------------------------------
+// MAPS
+
+// $font-weights:(
+//     "regular":400,
+//     "medium":500,
+//     "bold":700,
+// );
+// .selector{
+//     font-weight: map-get($font-weights,"medium");
+//     font-weight: map-keys($font-weights);
+//     font-weight: map-values($font-weights);
+//     font-weight: map-has-key($font-weights,"bold");
+// }
+// --------------------------------------------------------------------
+
+// Creating Custom Functions
+
+// Example One
+
+// $one:100px;
+// $two:100px;
+
+// @function add($numberOne,$numberTwo){
+//     @return $numberOne+$numberTwo;
+// }
+// section{
+//     width: add(10,30);
+// }
+
+// Example Two
+
+// @function randomColor(){
+//     @return rgb(random(255),random(255),random(255));
+// }
+// section{
+//     width: 100px;
+//     height: 100px;
+//     background: randomColor();
+// }
+
+// Example three
+
+$one:100px;
+$two:4;
+
+@function math($operator,$numberOne,$numberTwo){
+    @if $operator=="add"{
+        @return $numberOne+$numberTwo;
+    }
+    @if $operator=="substact"{
+        @return $numberOne - $numberTwo;
+    }
+    @if $operator=="multiply"{
+        @return $numberOne * $numberTwo;
+    }
+    @if $operator=="divide"{
+        @return $numberOne / $numberTwo;
+    }
+    @if $operator=="mod"{
+        @return $numberOne % $numberTwo;
+    }
+}
+
+section{
+    background: teal;
+    // Add
+    // width: math("add",$one,$two);
+    // width: math("multiply",$one ,$two );
+    // width: math("substact",$one,$two);
+    // width: math("divide",$one ,$two );
+    width: math("mod",$one ,$two );
+}

@@ -1,0 +1,24 @@
+.yellow {
+  background: yellow;
+}
+
+.orange {
+  background: orange;
+}
+
+.crimson {
+  background: crimson;
+}
+
+.red {
+  background: red;
+}
+
+body {
+  display: flex;
+}
+
+div {
+  flex: 1 1 auto;
+  height: 100vh;
+}/*# sourceMappingURL=style.css.map */
